@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer2() {
   return (
     <div class="mt-auto">
       <footer className="footer bg-base-200 text-base-content p-5 pl-10">

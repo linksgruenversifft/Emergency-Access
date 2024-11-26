@@ -8,9 +8,15 @@ import * as $account_index from "./routes/account/index.tsx";
 import * as $account_login from "./routes/account/login.tsx";
 import * as $account_signup from "./routes/account/signup.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
+import * as $dev_Data from "./routes/dev/Data.tsx";
+import * as $dev_Family from "./routes/dev/Family.tsx";
+import * as $dev_Passkey from "./routes/dev/Passkey.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $CreateFamily from "./islands/CreateFamily.tsx";
+import * as $Editor from "./islands/Editor.tsx";
+import * as $Passkey from "./islands/Passkey.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -21,11 +27,17 @@ const manifest = {
     "./routes/account/login.tsx": $account_login,
     "./routes/account/signup.tsx": $account_signup,
     "./routes/api/joke.ts": $api_joke,
+    "./routes/dev/Data.tsx": $dev_Data,
+    "./routes/dev/Family.tsx": $dev_Family,
+    "./routes/dev/Passkey.tsx": $dev_Passkey,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
+    "./islands/CreateFamily.tsx": $CreateFamily,
+    "./islands/Editor.tsx": $Editor,
+    "./islands/Passkey.tsx": $Passkey,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
