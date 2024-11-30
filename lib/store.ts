@@ -1,4 +1,4 @@
-import { exportKey, importKey } from "./crypto.ts";
+import { exportKey, importPrivateKey, importPublicKey } from "./crypto.ts";
 
 class UserStore {
   private recoveryKey: string | null = null;
@@ -14,14 +14,14 @@ class UserStore {
     if (publicKey == null) {
       store.publicKey = null;
     } else {
-      store.publicKey = await importKey(publicKey);
+      store.publicKey = await importPublicKey(publicKey);
     }
 
     const privateKey = sessionStorage.getItem("privateKey");
     if (privateKey == null) {
       store.privateKey = null;
     } else {
-      store.privateKey = await importKey(privateKey);
+      store.privateKey = await importPrivateKey(privateKey);
     }
 
     return store;

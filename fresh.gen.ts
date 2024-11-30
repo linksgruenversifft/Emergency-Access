@@ -9,11 +9,11 @@ import * as $account_login from "./routes/account/login.tsx";
 import * as $account_signup from "./routes/account/signup.tsx";
 import * as $dev_Data from "./routes/dev/Data.tsx";
 import * as $dev_Family from "./routes/dev/Family.tsx";
-import * as $dev_Passkey from "./routes/dev/Passkey.tsx";
+import * as $dev_Recover from "./routes/dev/Recover.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $CreateFamily from "./islands/CreateFamily.tsx";
 import * as $Editor from "./islands/Editor.tsx";
-import * as $Passkey from "./islands/Passkey.tsx";
+import * as $Recover from "./islands/Recover.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -25,13 +25,13 @@ const manifest = {
     "./routes/account/signup.tsx": $account_signup,
     "./routes/dev/Data.tsx": $dev_Data,
     "./routes/dev/Family.tsx": $dev_Family,
-    "./routes/dev/Passkey.tsx": $dev_Passkey,
+    "./routes/dev/Recover.tsx": $dev_Recover,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/CreateFamily.tsx": $CreateFamily,
     "./islands/Editor.tsx": $Editor,
-    "./islands/Passkey.tsx": $Passkey,
+    "./islands/Recover.tsx": $Recover,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

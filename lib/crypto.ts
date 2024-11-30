@@ -54,22 +54,32 @@ export async function decryptRSA(
 }
 
 export async function exportKey(key: CryptoKey): Promise<string> {
-  const publicKey = await globalThis.crypto.subtle.exportKey("spki", key);
+  const format = key.type === "public" ? "spki" : "pkcs8";
+  const publicKey = await globalThis.crypto.subtle.exportKey(format, key);
   const exportedAsString = ab2str(publicKey);
   const exportedAsBase64 = globalThis.btoa(exportedAsString);
-
   return exportedAsBase64;
 }
 
-export async function importKey(str: string): Promise<CryptoKey> {
+export async function importPrivateKey(str: string): Promise<CryptoKey> {
+  return await importKey(str, "private");
+}
+
+export async function importPublicKey(str: string): Promise<CryptoKey> {
+  return await importKey(str, "public");
+}
+
+export async function importKey(str: string, type: string): Promise<CryptoKey> {
+  const format = type === "public" ? "spki" : "pkcs8";
+  const usage = type === "public" ? "encrypt" : "decrypt";
   const exportedAsString = globalThis.atob(str);
   const exportedAsArray = str2ab(exportedAsString);
   const publicKey = await globalThis.crypto.subtle.importKey(
-    "spki",
+    format,
     exportedAsArray,
     rsaAlgorithm,
     true,
-    ["encrypt"]
+    [usage]
   );
   return publicKey;
 }
