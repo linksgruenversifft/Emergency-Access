@@ -22,8 +22,8 @@ export default function CreatePasskey() {
         <input
           readOnly
           type={passkey}
-          class="input input-bordered w-[25%] mt-8"
-          value="1234"
+          class="input input-bordered w-[25%] mt-8 text-center"
+          value=""
         />
         <button class="btn btn-primary w-40 mt-8" onClick={showPassword}>
           Passkey anzeigen
@@ -76,7 +76,9 @@ export default function CreatePasskey() {
           Der Passkey ist ebenfalls für die Abänderung Ihrer Daten notwendig.
         </p>
       </section>
-      <button class="btn btn-primary w-40 mt-8 mb-12">Weiter</button>
+      <a href="/dev/Family">
+        <button class="btn btn-primary w-40 mt-8 mb-12">Weiter</button>
+      </a>
     </main>
   );
 }
