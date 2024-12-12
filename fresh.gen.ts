@@ -10,10 +10,12 @@ import * as $account_signup from "./routes/account/signup.tsx";
 import * as $dev_Data from "./routes/dev/Data.tsx";
 import * as $dev_Family from "./routes/dev/Family.tsx";
 import * as $dev_Recover from "./routes/dev/Recover.tsx";
+import * as $dev_RecoverMenu from "./routes/dev/RecoverMenu.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $CreateFamily from "./islands/CreateFamily.tsx";
 import * as $Editor from "./islands/Editor.tsx";
 import * as $Recover from "./islands/Recover.tsx";
+import * as $RecoverMenu from "./islands/RecoverMenu.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -26,12 +28,14 @@ const manifest = {
     "./routes/dev/Data.tsx": $dev_Data,
     "./routes/dev/Family.tsx": $dev_Family,
     "./routes/dev/Recover.tsx": $dev_Recover,
+    "./routes/dev/RecoverMenu.tsx": $dev_RecoverMenu,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/CreateFamily.tsx": $CreateFamily,
     "./islands/Editor.tsx": $Editor,
     "./islands/Recover.tsx": $Recover,
+    "./islands/RecoverMenu.tsx": $RecoverMenu,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

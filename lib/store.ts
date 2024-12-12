@@ -1,4 +1,9 @@
-import { exportKey, importPrivateKey, importPublicKey } from "./crypto.ts";
+import {
+  exportKey,
+  importKey,
+  importPrivateKey,
+  importPublicKey,
+} from "./crypto.ts";
 
 class UserStore {
   private recoveryKey: string | null = null;
@@ -48,6 +53,10 @@ class UserStore {
   async setPrivateKey(privateKey: CryptoKey) {
     this.privateKey = privateKey;
     sessionStorage.setItem("privateKey", await exportKey(privateKey));
+  }
+
+  async importPrivateKey(key: string) {
+    this.setPrivateKey(await importKey(key, "private"));
   }
 }
 

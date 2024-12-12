@@ -66,6 +66,7 @@ export default function CreateFamily() {
                   treshold.value = parseInt(e.target.value);
                 }}
               />
+
               <input
                 type="number"
                 min="1"
@@ -79,6 +80,11 @@ export default function CreateFamily() {
               ></input>
             </li>
           </ul>
+          <p>
+            Es braucht mindestens {treshold}{" "}
+            {treshold.value === 1 ? "Person" : "Personen"} um deine Daten zu
+            entschlüsseln. #staySafe
+          </p>
         </div>
       </section>
       <a class="btn btn-primary w-40 mt-12" href="/dev/Data" target="_self">

@@ -16,13 +16,16 @@ export function Bar() {
               <summary>Dev</summary>
               <ul className="p-2">
                 <li>
-                  <a href="/dev/Passkey">Passkey</a>
+                  <a href="/dev/Recover">Recover</a>
                 </li>
                 <li>
                   <a href="/dev/Family">Family</a>
                 </li>
                 <li>
                   <a href="/dev/Data">Data</a>
+                </li>
+                <li>
+                  <a href="/dev/RecoverMenu">RecoverMenu</a>
                 </li>
               </ul>
             </details>
