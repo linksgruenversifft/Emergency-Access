@@ -1,13 +1,8 @@
 import { signal } from "@preact/signals";
 import { store } from "../lib/store.ts";
-import {
-  generateRecoveryKey,
-  generateRSAKeys,
-  importPrivateKey,
-} from "../lib/crypto.ts";
+import { generateRecoveryKey, generateRSAKeys } from "../lib/crypto.ts";
 import { selectFile } from "../lib/utils.ts";
 
-const inputType = signal("password");
 const privateKey = signal(store.getPrivateKey());
 const errorSignal = signal("");
 
