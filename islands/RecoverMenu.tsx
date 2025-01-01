@@ -2,7 +2,6 @@ import { signal } from "@preact/signals";
 import { store } from "../lib/store.ts";
 import { generateRecoveryKey, generateRSAKeys } from "../lib/crypto.ts";
 
-const inputType = signal("password");
 const privateKey = signal(store.getPrivateKey());
 
 function createRecoveryKey() {
@@ -76,7 +75,8 @@ export default function HandleRecover() {
         <ul class="steps steps-vertical m-auto">
           <li class="step step-primary">Privaten Schlüssel erstellen</li>
           <li class="step">Familie / Freunde einladen</li>
-          <li class="step">Tresor erstellen</li>
+          <li class="step">Daten einpflegen</li>
+          <li class="step">Verschlüsselt weitergeben</li>
           <li class="step">Fertig!</li>
         </ul>
       </aside>

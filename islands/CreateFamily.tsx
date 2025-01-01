@@ -36,7 +36,7 @@ export default function CreateFamily() {
                   <input
                     class="input input-bordered w-full max-w-xs"
                     type="text"
-                    placeholder="Name"
+                    placeholder="Name oder Email"
                     value={user}
                     onChange={(e) => updateUser(e, index)}
                   />

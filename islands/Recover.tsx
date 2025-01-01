@@ -45,7 +45,7 @@ function CreateRecoveryKey() {
                 class="btn btn-primary"
                 onClick={async () => {
                   const file = (await selectFile("pdf", false)) as string;
-                  failedUpload(file, modal);
+                  upload(file, modal);
                 }}
               >
                 Datei hochladen
@@ -58,7 +58,7 @@ function CreateRecoveryKey() {
               type="password"
               class="input-lg input-primary rounded-lg w-80 text-center"
               onChange={(e) => {
-                failedUpload(e.currentTarget.value, modal);
+                upload(e.currentTarget.value, modal);
               }}
             ></input>
           </div>
@@ -73,7 +73,7 @@ function CreateRecoveryKey() {
   );
 }
 
-async function failedUpload(raw: string, modal: HTMLDialogElement | null) {
+async function upload(raw: string, modal: HTMLDialogElement | null) {
   try {
     await store.importPrivateKey(raw);
   } catch {
@@ -81,6 +81,9 @@ async function failedUpload(raw: string, modal: HTMLDialogElement | null) {
       "Fehler beim auswerten der Datei. Bitte lad eine valide .txt Datei hoch!";
     return;
   }
+
+  // TODO: LOAD pub and recovery key
+
   modal?.close();
 }
 
